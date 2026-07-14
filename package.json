@@ -1,0 +1,12 @@
+{
+  "name": "agenda-de-citas",
+  "version": "1.0.0",
+  "description": "Agenda de citas - proyecto final",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": ["agenda", "citas", "nodejs"],
+  "author": "",
+  "license": "ISC"
+}
