@@ -5,7 +5,7 @@ Aplicación de consola en JavaScript (Node.js) para gestionar citas de un negoci
 ## Estructura del proyecto
 
 ```
-agenda/
+proyecto_final/
 ├── citas.js       # Lógica de negocio (sin console.log)
 ├── interfaz.js    # Menús, listados y entrada del usuario
 ├── app.js         # Coordinador: bucle principal y flujo del menú
@@ -30,8 +30,8 @@ agenda/
 
 ```bash
 # Clonar el repositorio
-git clone <url-del-repositorio>
-cd agenda
+git clone https://github.com/PIPE010203/proyecto_final.git
+cd proyecto_final
 
 # Iniciar la aplicación
 npm start
