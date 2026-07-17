@@ -1,19 +1,19 @@
-const readline = require("readline");
+const readline = require('readline');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+const el = readline.createInterface({
+  imput: process.stdin,
+  ouput: process.stdout,
 });
 
 function preguntar(texto) {
-  return new Promise((resolve) => {
+  return new Promise((resolver)=>{
     rl.question(texto, (respuesta) => {
-      resolve(respuesta);
-    });
-  });
+      resolver(respuesta);
+    }); 
+  })
 }
 
-function mostrarMenu() {
+function mostrarmenu() {
   console.log("\n=== Agenda de Citas ===");
   console.log("1. Agendar cita");
   console.log("2. Ver agenda");
@@ -23,24 +23,24 @@ function mostrarMenu() {
 }
 
 function mostrarAgenda(citas, resumen) {
-  console.log("\n--- Agenda ---");
+  console.log("\n=== AGENDA ===");
 
   if (citas.length === 0) {
     console.log("No hay citas agendadas.");
-  } else {
-    for (let i = 0; i < citas.length; i++) {
+  }else {
+    for(let i =0; i < citas.length; i++) {
       const cita = citas[i];
-      const estado = cita.atendida ? "atendida" : "pendiente";
+      const estado = cita.atendida ? "Atendida" : "Pendiente";
       console.log(
-        `${i + 1}. ${cita.cliente} - ${cita.servicio} - ${cita.hora} (${estado})`
+        `${i + 1}. ${cita.cliente} - ${cita.servicio} a las ${cita.hora} (${estado})`
       );
     }
   }
 
   if (resumen) {
     console.log(
-      `\nResumen: ${resumen.pendientes} pendientes, ${resumen.atendidas} atendidas.`
-    );
+      `Resumen: ${resumen.pendientes} pendientes, ${resumen.atendidas} atendidas.`
+    )
   }
 }
 
@@ -48,8 +48,8 @@ function mostrarMensaje(mensaje) {
   console.log(mensaje);
 }
 
-function mostrarError(mensaje) {
-  console.log(`Error: ${mensaje}`);
+function mostrarError(error) {
+  console.log(`Error: ${error}`);
 }
 
 function cerrar() {
@@ -58,7 +58,7 @@ function cerrar() {
 
 module.exports = {
   preguntar,
-  mostrarMenu,
+  mostrarmenu,
   mostrarAgenda,
   mostrarMensaje,
   mostrarError,
